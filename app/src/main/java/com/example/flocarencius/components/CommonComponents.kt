@@ -29,10 +29,16 @@ import com.example.flocarencius.ui.theme.Inria
 fun AppHeader(title: String) {
     Surface(
         color = MaterialTheme.colorScheme.primary,
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(
+            topStart     = 0.dp,
+            topEnd       = 0.dp,
+            bottomStart  = 30.dp,
+            bottomEnd    = 30.dp
+        ),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(bottom = 16.dp)
+            .padding(bottom = 16.dp),
+
     ) {
         Row(
             modifier = Modifier
@@ -235,9 +241,11 @@ fun ScreenContainer(
             content()
         }
 
-        PrimaryButton(
-            text = "Back",
-            onClick = onNextClick
-        )
+        if (mema == 0){
+            PrimaryButton(
+                text = "Back",
+                onClick = onNextClick
+            )
+        }
     }
 }

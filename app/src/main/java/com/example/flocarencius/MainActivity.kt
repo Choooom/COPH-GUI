@@ -34,7 +34,10 @@ class MainActivity : ComponentActivity() {
 fun AppNavigation() {
     val navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = "home") {
+    NavHost(navController = navController, startDestination = "welcome") {
+        composable("welcome") {
+            WelcomeScreen(navController = navController)
+        }
         composable("home") {
             HomeScreen(navController = navController)
         }
@@ -85,6 +88,75 @@ fun AppNavigation() {
         }
         composable("m_time") {
             TimeConverterScreen(navController = navController)
+        }
+        composable("v_similar") {
+            VectorSimilarScreen(navController = navController)
+        }
+        composable("v_different") {
+            VectorDifferentScreen(navController = navController)
+        }
+        composable("v_perpendicular") {
+            VectorPerpendicularScreen(navController = navController)
+        }
+        composable("v_angle") {
+            VectorWithAngleScreen(navController = navController)
+        }
+        composable("k_one") {
+            KinematicsOne(navController = navController)
+        }
+        composable("k_two") {
+            KinematicsTwo(navController = navController)
+        }
+        composable("k_three") {
+            KinematicsThree(navController = navController)
+        }
+        composable("k_four") {
+            KinematicsFour(navController = navController)
+        }
+        composable("k_five") {
+            KinematicsFive(navController = navController)
+        }
+        composable("k_six") {
+            KinematicsSix(navController = navController)
+        }
+        composable("k_seven") {
+            KinematicsSeven(navController = navController)
+        }
+        composable("k_eight") {
+            KinematicsEight(navController = navController)
+        }
+        composable("w_work") {
+            WorkCalculateScreen(navController = navController)
+        }
+        composable("w_angle") {
+            WorkAngleScreen(navController = navController)
+        }
+        composable("a_similar") {
+            AcceleratingObjectScreen(navController = navController)
+        }
+        composable("a_opposite") {
+            AcceleratingObjectScreen(navController = navController, isOpposite = true)
+        }
+        composable("momentum") {
+            MomentumScreen(navController = navController)
+        }
+        composable("impulse") {
+            ImpulseScreen(navController = navController)
+        }
+        composable("momentum_delta") {
+            MomentumDeltaScreen(navController = navController)
+        }
+        composable("recoil") {
+            RecoilScreen(navController = navController)
+        }
+        composable("inelastic") {
+            InelasticCollisionScreen(navController = navController)
+        }
+        composable("kinetic_friction") {
+            KineticFrictionScreen(navController = navController)
+        }
+        composable("kinetic_friction_angle") {
+            StaticFrictionScreen(navController = navController)
         }
     }
 }

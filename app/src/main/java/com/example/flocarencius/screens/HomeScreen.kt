@@ -20,7 +20,7 @@ import com.example.flocarencius.ui.theme.Inria
 @Composable
 fun HomeScreen(navController: NavController) {
     ScreenContainer(
-        onNextClick = { /* Handle next click */ },
+        onNextClick = { navController.navigate("welcome") },
         content = {
             Column(
                 modifier = Modifier
@@ -87,7 +87,7 @@ fun HomeScreen(navController: NavController) {
 
                     MenuButton(
                         text = "Temperature",
-                        onClick = { navController.navigate("document_types") }
+                        onClick = { navController.navigate("m_temperature") }
                     )
                 }
             }

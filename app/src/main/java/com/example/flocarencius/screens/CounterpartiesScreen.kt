@@ -3,12 +3,19 @@ package com.example.flocarencius.screens
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.flocarencius.components.GridMenuButton
 import com.example.flocarencius.components.ScreenContainer
+import com.example.flocarencius.ui.theme.Inria
 
 @Composable
 fun CounterpartiesScreen(navController: NavController) {
@@ -19,21 +26,33 @@ fun CounterpartiesScreen(navController: NavController) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(rememberScrollState())
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(
+                    text = "Vectors",
+                    style = MaterialTheme.typography.headlineLarge,
+                    fontFamily = Inria,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 40.dp, top = 20.dp)
+                )
+                Text(
+                    text = "What are their directions?",
+                    fontFamily = Inria,
+                    fontWeight = FontWeight.Normal,
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(bottom = 40.dp)
+                )
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(0.4f),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     GridMenuButton(
-                        text = "Добавить",
-                        onClick = { /* Handle click */ },
-                        modifier = Modifier.weight(1f)
-                    )
-
-                    GridMenuButton(
-                        text = "Редактировать",
-                        onClick = { /* Handle click */ },
+                        text = "Similar",
+                        onClick = { navController.navigate("v_similar") },
                         modifier = Modifier.weight(1f)
                     )
                 }
@@ -41,18 +60,38 @@ fun CounterpartiesScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxWidth(0.4f),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     GridMenuButton(
-                        text = "Удалить",
-                        onClick = { /* Handle click */ },
+                        text = "Opposite",
+                        onClick = { navController.navigate("v_different") },
                         modifier = Modifier.weight(1f)
                     )
+                }
 
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(0.4f),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
                     GridMenuButton(
-                        text = "Поиск",
-                        onClick = { /* Handle click */ },
+                        text = "Perpendicular",
+                        onClick = { navController.navigate("v_perpendicular") },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(0.4f),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    GridMenuButton(
+                        text = "With Angle",
+                        onClick = { navController.navigate("v_angle") },
                         modifier = Modifier.weight(1f)
                     )
                 }
