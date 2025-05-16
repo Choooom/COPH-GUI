@@ -8,12 +8,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.flocarencius.components.MenuButton
 import com.example.flocarencius.components.ScreenContainer
+import com.example.flocarencius.ui.theme.Inria
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -27,6 +29,8 @@ fun HomeScreen(navController: NavController) {
             ) {
                 Text(
                     text = "Computational Physics System",
+                    fontFamily = Inria,
+                    fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.headlineLarge,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(bottom = 20.dp)
@@ -34,6 +38,8 @@ fun HomeScreen(navController: NavController) {
 
                 Text(
                     text = "Choose from the 8 topics:",
+                    fontFamily = Inria,
+                    fontWeight = FontWeight.Normal,
                     style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(bottom = 24.dp)

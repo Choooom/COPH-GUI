@@ -2,9 +2,11 @@ package com.example.flocarencius.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.flocarencius.R
 
 // Define your custom typography styles
 val CustomTypography = Typography(
@@ -43,4 +45,13 @@ val CustomTypography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     )
+)
+
+val Inria= FontFamily(
+    Font(R.font.inria_serif_light, FontWeight.Light),
+    Font(R.font.inria_serif_light_italic,    FontWeight.Light),
+    Font(R.font.inria_serif_bold,    FontWeight.Bold),
+    Font(R.font.inria_serif_bold_italic,    FontWeight.Bold),
+    Font(R.font.inria_serif_regular,    FontWeight.Normal),
+    Font(R.font.inria_serif_italic,    FontWeight.W500),
 )

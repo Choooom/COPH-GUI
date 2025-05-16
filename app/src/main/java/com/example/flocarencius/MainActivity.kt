@@ -68,5 +68,23 @@ fun AppNavigation() {
         composable("settings") {
             SettingsScreen(navController = navController)
         }
+        composable("m_length") {
+            LengthConverterScreen(navController = navController)
+        }
+        composable("m_volume") {
+            VolumeConverterScreen(navController = navController)
+        }
+        composable("m_temperature") {
+            TemperatureConverterScreen(navController = navController)
+        }
+        composable("m_weight") {
+            WeightConverterScreen(navController = navController)
+        }
+        composable("m_area") {
+            AreaConverterScreen(navController = navController)
+        }
+        composable("m_time") {
+            TimeConverterScreen(navController = navController)
+        }
     }
 }
