@@ -108,6 +108,7 @@ fun OperationTypesScreen(navController: NavController) {
                         modifier = Modifier.weight(1f)
                     )
                 }
+                Spacer(modifier = Modifier.height(18.dp))
             }
         }
     )
